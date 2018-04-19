@@ -10,4 +10,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("The first rule of fight club")
+    return HttpResponse("Gautam is lonely in the shower")
