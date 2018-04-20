@@ -13,9 +13,7 @@ dj-database-url = "*"
 psycopg2 = "*"
 whitenoise = "*"
 requests = "*"
-djangorestframework = "*"
-markdown = "*"
-django-filter = "*"
+
 [requires]
 
 python_version = "3.7"
