@@ -16,7 +16,6 @@ requests = "*"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
-coreapi = "*"
 [requires]
 
 python_version = "3.7"
