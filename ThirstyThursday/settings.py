@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Organize',
     'CheckIn',
+    'rest_framework',
+    'User',
 ]
+
+#Custom User model
+AUTH_USER_MODEL = 'User.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
