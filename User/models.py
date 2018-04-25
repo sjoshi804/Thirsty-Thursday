@@ -30,11 +30,11 @@ class Organizer(models.Model):
     organization_name = models.TextField(null = False)
     
     #Parties that have been hosted in the past
-    hostedParties = models.ForeignKey('Organize.Party')
+    hostedParties = models.ForeignKey('Organize.Party', on_delete=models.CASCADE, )
     
     #Parties that have been created but have not started yet
-    upcomingParties = models.ForeignKey('Organize.Party')
+    upcomingParties = models.ForeignKey('Organize.Party', on_delete=models.CASCADE,)
     
     #Parties that are currently going on
-    currentParties = models.ForeignKey('Organize.Party')
+    currentParties = models.ForeignKey('Organize.Party', on_delete=models.CASCADE,)
     
