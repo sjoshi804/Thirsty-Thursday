@@ -1,0 +1,9 @@
+from rest_framework import serializers
+ 
+from Organize.models import Party
+ 
+class PartySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Party
+        fields = ('url', 'id', 'created', 'name', 'user')
+        
