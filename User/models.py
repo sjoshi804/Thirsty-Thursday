@@ -2,7 +2,10 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
-class User(AbstractUser):
+class User(models.Mode):
+    #Unique Account Indentifier
+    uniqueID = models.TextField(null = False)
+
     # Account Type
     isOperator = models.BooleanField(default = False)
     isOrganizer = models.BooleanField(default = False)
