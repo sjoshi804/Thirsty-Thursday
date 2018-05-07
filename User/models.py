@@ -1,10 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
-class User(models.Mode):
+class User(models.Model):
     #Unique Account Indentifier
     uniqueID = models.TextField(null = False)
+    
+    #Contact Information 
+    email = models.TextField(null = False)
+    phone = models.TextField(default = "N/A")
 
     # Account Type
     isOperator = models.BooleanField(default = False)
@@ -15,8 +18,7 @@ class User(models.Mode):
     attended = models.ManyToManyField('Organize.Party')
     
     #Account Details
-    venmoId = models.TextField(default = "N/A")
-    universityId = models.TextField(default = "N/A")
+    universityID = models.TextField(default = "N/A")
 
 class Operator(models.Model):
     #OneToOne mapping to User
