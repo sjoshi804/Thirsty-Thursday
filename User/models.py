@@ -37,7 +37,7 @@ class Organizer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     
     #Name of Organization that organizer hosts parties for
-    organization_name = models.TextField(null = False)
+    organizationName = models.TextField(null = False)
     
     #Parties that have been hosted in the past
     hostedParties = models.ForeignKey('Organize.Party', on_delete=models.CASCADE, )
