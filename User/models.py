@@ -6,8 +6,8 @@ class User(models.Model):
     uniqueID = models.TextField(null = False)
     
     #Basic Information
-    firstname = models.TextField(null = False)
-    lastname = models.TextField(null = False)
+    firstName = models.TextField(null = False)
+    lastName = models.TextField(null = False)
     college = models.TextField(default = "UCLA")
 
     #Contact Information 
