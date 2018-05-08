@@ -1,0 +1,6 @@
+ERRORS:
+User.User --> admin account issues
+
+Party.attended/paidCash/paidVenmo --> fix related name (related_name='%(class)s_requests_created')
+
+Change references to Organize.Party to Party.Party in User 

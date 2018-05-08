@@ -1,0 +1,43 @@
+/app/.heroku/python/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+[31;1mSystemCheckError: System check identified some issues:
+[0m
+ERRORS:
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E019) The value of 'filter_horizontal[0]' refers to 'groups', which is not an attribute of 'User.User'.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E019) The value of 'filter_horizontal[1]' refers to 'user_permissions', which is not an attribute of 'User.User'.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E033) The value of 'ordering[0]' refers to 'username', which is not an attribute of 'User.User'.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E108) The value of 'list_display[0]' refers to 'username', which is not a callable, an attribute of 'UserAdmin', or an attribute or method on 'User.User'.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E108) The value of 'list_display[2]' refers to 'first_name', which is not a callable, an attribute of 'UserAdmin', or an attribute or method on 'User.User'.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E108) The value of 'list_display[3]' refers to 'last_name', which is not a callable, an attribute of 'UserAdmin', or an attribute or method on 'User.User'.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E108) The value of 'list_display[4]' refers to 'is_staff', which is not a callable, an attribute of 'UserAdmin', or an attribute or method on 'User.User'.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E116) The value of 'list_filter[0]' refers to 'is_staff', which does not refer to a Field.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E116) The value of 'list_filter[1]' refers to 'is_superuser', which does not refer to a Field.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E116) The value of 'list_filter[2]' refers to 'is_active', which does not refer to a Field.[0m
+[31;1m<class 'django.contrib.auth.admin.UserAdmin'>: (admin.E116) The value of 'list_filter[3]' refers to 'groups', which does not refer to a Field.[0m
+[31;1mParty.Party.attended: (fields.E304) Reverse accessor for 'Party.attended' clashes with reverse accessor for 'Party.paidCash'.
+	HINT: Add or change a related_name argument to the definition for 'Party.attended' or 'Party.paidCash'.[0m
+[31;1mParty.Party.attended: (fields.E304) Reverse accessor for 'Party.attended' clashes with reverse accessor for 'Party.paidVenmo'.
+	HINT: Add or change a related_name argument to the definition for 'Party.attended' or 'Party.paidVenmo'.[0m
+[31;1mParty.Party.paidCash: (fields.E304) Reverse accessor for 'Party.paidCash' clashes with reverse accessor for 'Party.attended'.
+	HINT: Add or change a related_name argument to the definition for 'Party.paidCash' or 'Party.attended'.[0m
+[31;1mParty.Party.paidCash: (fields.E304) Reverse accessor for 'Party.paidCash' clashes with reverse accessor for 'Party.paidVenmo'.
+	HINT: Add or change a related_name argument to the definition for 'Party.paidCash' or 'Party.paidVenmo'.[0m
+[31;1mParty.Party.paidVenmo: (fields.E304) Reverse accessor for 'Party.paidVenmo' clashes with reverse accessor for 'Party.attended'.
+	HINT: Add or change a related_name argument to the definition for 'Party.paidVenmo' or 'Party.attended'.[0m
+[31;1mParty.Party.paidVenmo: (fields.E304) Reverse accessor for 'Party.paidVenmo' clashes with reverse accessor for 'Party.paidCash'.
+	HINT: Add or change a related_name argument to the definition for 'Party.paidVenmo' or 'Party.paidCash'.[0m
+[31;1mUser.Operator.checkInPermissionsFor: (fields.E300) Field defines a relation with model 'Organize.Party', which is either not installed, or is abstract.[0m
+[31;1mUser.Operator.checkInPermissionsFor: (fields.E307) The field User.Operator.checkInPermissionsFor was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.Operator_checkInPermissionsFor.party: (fields.E307) The field User.Operator_checkInPermissionsFor.party was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.Organizer.currentParties: (fields.E300) Field defines a relation with model 'Organize.Party', which is either not installed, or is abstract.[0m
+[31;1mUser.Organizer.currentParties: (fields.E307) The field User.Organizer.currentParties was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.Organizer.hostedParties: (fields.E300) Field defines a relation with model 'Organize.Party', which is either not installed, or is abstract.[0m
+[31;1mUser.Organizer.hostedParties: (fields.E307) The field User.Organizer.hostedParties was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.Organizer.upcomingParties: (fields.E300) Field defines a relation with model 'Organize.Party', which is either not installed, or is abstract.[0m
+[31;1mUser.Organizer.upcomingParties: (fields.E307) The field User.Organizer.upcomingParties was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.User.attended: (fields.E300) Field defines a relation with model 'Organize.Party', which is either not installed, or is abstract.[0m
+[31;1mUser.User.attended: (fields.E307) The field User.User.attended was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.User.goingTo: (fields.E300) Field defines a relation with model 'Organize.Party', which is either not installed, or is abstract.[0m
+[31;1mUser.User.goingTo: (fields.E307) The field User.User.goingTo was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.User_attended.party: (fields.E307) The field User.User_attended.party was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
+[31;1mUser.User_goingTo.party: (fields.E307) The field User.User_goingTo.party was declared with a lazy reference to 'Organize.party', but app 'Organize' isn't installed.[0m
