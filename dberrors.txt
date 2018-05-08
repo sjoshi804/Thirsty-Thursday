@@ -1,6 +1,2 @@
 ERRORS:
 User.User --> admin account issues
-
-Party.attended/paidCash/paidVenmo --> fix related name (related_name='%(class)s_requests_created')
-Organize.etc Operator.checkIn..   --> same as above				
-
