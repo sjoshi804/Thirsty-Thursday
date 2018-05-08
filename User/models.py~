@@ -19,8 +19,8 @@ class User(models.Model):
     isOrganizer = models.BooleanField(default = False)
     
     #Party-goer fields
-    goingTo = models.ManyToManyField('Party.Party', related_name = '%(class)s_goingTod')
-    attendedParties = models.ManyToManyField('Party.Party', related_name = '%(class)s_attenededParties')
+    goingTo = models.ManyToManyField('Party.Party')
+    attended = models.ManyToManyField('Party.Party')
     
     #Account Details
     universityID = models.TextField(default = "N/A")
