@@ -16,7 +16,7 @@ class Party(models.Model):
     paidCash = models.ManyToManyField('User.User', related_name = '%(class)s_paidCash')
 
     #Status
-    status = models.CharField(max_length = 20, blank = False, default = "Upcoming")
+    status = models.CharField(max_length = 20, blank = False, default = "Upcoming", on_delete = models.CASCADE)
 
     class Meta:
         ordering = ('time',)
