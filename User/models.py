@@ -41,4 +41,4 @@ class Organizer(models.Model):
     
     #Parties that are associated with this organizer
     #Check party field to see status of the party (Upcoming, Current, Past)
-    parties = models.ForeignKey('Party.Party')
+    parties = models.ForeignKey('Party.Party', on_delete=models.CASCADE)

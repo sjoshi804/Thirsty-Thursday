@@ -11,12 +11,12 @@ class Party(models.Model):
     location = models.CharField(max_length = 100, blank = False, null = False)
     
     #Guest List
-    attended = models.ManyToManyField('User.User', related_name = '%(class)s_attended')
+    attended = models.ManyToManyField('User.User', related_name = '%(class)s_attended', )
     paidVenmo = models.ManyToManyField ('User.User', related_name = '%(class)s_paidVenmo')
     paidCash = models.ManyToManyField('User.User', related_name = '%(class)s_paidCash')
 
     #Status
-    status = models.CharField(max_length = 20, blank = False, default = "Upcoming",)
+    status = models.CharField(max_length = 20, blank = False, default = "Upcoming",
 
     class Meta:
         ordering = ('time',)

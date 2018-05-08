@@ -19,7 +19,7 @@ class User(models.Model):
     isOrganizer = models.BooleanField(default = False)
     
     #Party-goer fields
-    goingTo = models.ManyToManyField('Party.Party', related_name = '%(class)s_goingTod')
+    goingTo = models.ManyToManyField('Party.Party', related_name = '%(class)s_goingTo')
     attendedParties = models.ManyToManyField('Party.Party', related_name = '%(class)s_attenededParties')
     
     #Account Details
@@ -30,7 +30,7 @@ class Operator(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     
     #Parties that the operator has checkIn priveleges for
-    checkInPermissionsFor = models.ManyToManyField('Party.Party')
+    checkInPermissionsFor = models.ManyToManyField('Party.Party', related_name = '%(class)s_checkInPermissionsFor')
     
 class Organizer(models.Model):
     #OneToOne mapping to User
@@ -39,12 +39,6 @@ class Organizer(models.Model):
     #Name of Organization that organizer hosts parties for
     organizationName = models.TextField(null = False)
     
-    #Parties that have been hosted in the past
-    hostedParties = models.ForeignKey('Party.Party', on_delete=models.CASCADE, )
-    
-    #Parties that have been created but have not started yet
-    upcomingParties = models.ForeignKey('Party.Party', on_delete=models.CASCADE,)
-    
-    #Parties that are currently going on
-    currentParties = models.ForeignKey('Party.Party', on_delete=models.CASCADE,)
-    
+    #Parties that are associated with this organizer
+    #Check party field to see status of the party (Upcoming, Current, Past)
+    parties = models.ForeignKey('Party.Party')
