@@ -24,3 +24,4 @@ class PartyDetail(generics.RetrieveUpdateDestroyAPIView):
     
     def get_queryset(self):
         return Party.objects.all().filter(user=self.request.user)
+
