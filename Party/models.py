@@ -6,7 +6,7 @@ class Party(models.Model):
     #Basic Details
     createdAt = models.DateTimeField(auto_now_add = True)
     eventName = models.CharField(max_length = 100, blank = False, default = "Thursty Party")
-    hostedBy = models.ForeignKey('User.Organizer', related_name = 'parties', on_delete = models.CASCADE, null = False)
+    hostedBy = models.ForeignKey('User.Organizer', related_name = 'hostedBy', on_delete = models.CASCADE, null = False)
     time = models.DateTimeField(null = False)
     location = models.CharField(max_length = 100, blank = False, null = False)
     
