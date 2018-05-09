@@ -26,7 +26,7 @@ SECRET_KEY = 'z!z9+*6b^4^h$)1zz_3(6v=yzlch$)(pnx1#1_tsc)n2wnubl1'
 DEBUG = True
 
 
-DATABASE_URL = $(heroku config:get DATABASE_URL -a test-thursday) 
+DATABASE_URL = ""
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'thirsty-thursday.herokuapp.com', 'test-thursday.herokuapp.com']
 
 
