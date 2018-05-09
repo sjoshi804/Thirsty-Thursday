@@ -25,6 +25,8 @@ SECRET_KEY = 'z!z9+*6b^4^h$)1zz_3(6v=yzlch$)(pnx1#1_tsc)n2wnubl1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+DATABASE_URL = $(heroku config:get DATABASE_URL -a test-thursday) 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'thirsty-thursday.herokuapp.com', 'test-thursday.herokuapp.com']
 
 
@@ -77,7 +79,7 @@ WSGI_APPLICATION = 'ThirstyThursday.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(postgres://eytrxbaazwpvuj:90a4f429f9588df331bb3510ecf36f3c5b0ee5957c8fbfe790f5605a36170e89@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d6ffpho35nu8nn) ,
+    'default': dj_database_url.config("postgres://eytrxbaazwpvuj:90a4f429f9588df331bb3510ecf36f3c5b0ee5957c8fbfe790f5605a36170e89@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d6ffpho35nu8nn") ,
 }
 
 
