@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'ThirstyThursday.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES ['default'] =  dj_database_url.config("postgres://eytrxbaazwpvuj:90a4f429f9588df331bb3510ecf36f3c5b0ee5957c8fbfe790f5605a36170e89@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d6ffpho35nu8nn")
+DATABASE ['default'] =  dj_database_url.config("postgres://eytrxbaazwpvuj:90a4f429f9588df331bb3510ecf36f3c5b0ee5957c8fbfe790f5605a36170e89@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d6ffpho35nu8nn")
 
 
 # Password validation
