@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-
+import dj_database_url
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -77,15 +77,7 @@ WSGI_APPLICATION = 'ThirstyThursday.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': 
-    {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'USER': 'abcd',
-        'PASSWORD':'abcd',
-        'HOST': '',
-        'PORT': '',
-    }
+    'default': dj_database_url.config(postgres://eytrxbaazwpvuj:90a4f429f9588df331bb3510ecf36f3c5b0ee5957c8fbfe790f5605a36170e89@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d6ffpho35nu8nn) ,
 }
 
 
