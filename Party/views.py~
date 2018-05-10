@@ -16,12 +16,12 @@ class PartyList(generics.ListCreateAPIView):
     serializer_class = PartySerializer
  
     def perform_create(self, serializer):
-        serializer.save()
+        serializer.save(request)
  
  
 class PartyDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PartySerializer
     
     def get_queryset(self):
-        return Party.objects.all().filter()
+        return Party.objects.all().filter(request)
 
