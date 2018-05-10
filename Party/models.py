@@ -2,6 +2,7 @@ from django.db import models
 # Create your models here.
 
 class Party(models.Model):
+    id = models.TextField(max_length = 10, blank = False, null = False)
     createdAt = models.DateTimeField(auto_now_add = True)
     eventName = models.CharField(max_length = 100, blank = False, default = "Thursty Party")
     
