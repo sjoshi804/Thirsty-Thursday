@@ -11,9 +11,9 @@ class Party(models.Model):
     location = models.CharField(max_length = 100, blank = False, null = False)
     
     #Guest List
-    attended = models.ManyToManyField('User.User', related_name = '%(class)s_attended')
-    paidVenmo = models.ManyToManyField ('User.User', related_name = '%(class)s_paidVenmo')
-    paidCash = models.ManyToManyField('User.User', related_name = '%(class)s_paidCash')
+    attended = models.ManyToManyField('User.User', related_name = '%(class)s_attended', blank = True)
+    paidVenmo = models.ManyToManyField ('User.User', related_name = '%(class)s_paidVenmo', blank = True)
+    paidCash = models.ManyToManyField('User.User', related_name = '%(class)s_paidCash', blank = True)
 
     #Status
     status = models.CharField(max_length = 20, blank = False, default = "Upcoming",)
