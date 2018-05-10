@@ -1,0 +1,7 @@
+#! /bin/sh
+
+git push
+git push origin Siddharth:master
+git checkout master
+git pull
+git checkout Siddharth
