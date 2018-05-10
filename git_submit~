@@ -1,5 +1,4 @@
 #! /bin/sh
-
 git push
 git push origin Siddharth:master
 git checkout master
