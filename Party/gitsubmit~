@@ -7,4 +7,3 @@ git checkout master
 sleep 1
 git pull
 git checkout Siddharth
-git push heroku master
