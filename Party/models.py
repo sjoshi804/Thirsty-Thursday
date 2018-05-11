@@ -3,7 +3,7 @@ from django.db import models
 
 class Party(models.Model):   
     #Unique Party identifier
-    id = models.IntegerField(blank = False, null = False, primary_key = True)
+    id = models.IntegerField(max_length = 10, blank = False, null = False, primary_key = True)
 
     #Basic Details
     createdAt = models.DateTimeField(auto_now_add = True)
@@ -13,7 +13,9 @@ class Party(models.Model):
     location = models.CharField(max_length = 100, blank = False, null = False)
     
     #Guest List
-    # Need to add fields for attendance and payments 
+    attended = models.ManyToManyField('User.User', related_name = '%(class)s_attended', blank = True)
+    paidVenmo = models.ManyToManyField ('User.User', related_name = '%(class)s_paidVenmo', blank = True)
+    paidCash = models.ManyToManyField('User.User', related_name = '%(class)s_paidCash', blank = True)
 
     #Status
     status = models.CharField(max_length = 20, blank = False, default = "Upcoming",)
