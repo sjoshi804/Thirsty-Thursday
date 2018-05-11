@@ -21,13 +21,13 @@ class PartyList(generics.ListCreateAPIView):
  
 class PartyDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PartySerializer
-    lookup_field = 'eventName'
+    lookup_field = 'partyid'
     def get_queryset(self):
         queryset = Party.objects.all()
 
-        partyName = self.kwargs['eventName']
+        partyID = self.kwargs['partyid']
        
         if partyName is not None:
-            queryset = queryset.filter(eventName = partyName)
+            queryset = queryset.filter(partyid = partyID)
             
         return queryset

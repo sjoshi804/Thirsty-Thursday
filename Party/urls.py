@@ -10,5 +10,5 @@ from Party import views
  
 urlpatterns = [
     re_path(r'^party/$', views.PartyList.as_view(), name='party-list'),
-    re_path(r'^party/(?P<eventName>.+)/$', views.PartyDetail.as_view(), name='party-detail'),
+    re_path(r'^party/(?P<partyid>.+)/$', views.PartyDetail.as_view(), name='party-detail'),
 ]
