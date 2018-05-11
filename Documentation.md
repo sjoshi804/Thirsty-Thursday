@@ -22,7 +22,7 @@ POST: https://thirsty-thursday.herokuapp.com/party/
 Sample Payload:
 
 {
-    
+
     "partyid": "2",
     
     "hostedBy": null,
@@ -41,15 +41,13 @@ Sample Payload:
 
 }
 
-#### Update details for a certain party
+#### Update a single detail for a certain party
 PATCH: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 
 Sample Payload: Updates status to Live
 
 {
-  
   "status": "Live"
-
 }
 
 #### Delete a certain party
