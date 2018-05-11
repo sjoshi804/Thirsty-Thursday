@@ -1,7 +1,6 @@
 # README
-This explains how the following GET/POST/PUT/PATCH/DELETE requests can be used to interact with the Thursty Backend RESTful API.
 
-## Party
+## Party API Calls
 
 ### What it does
 
@@ -73,5 +72,11 @@ Sample payload: Updates partyid to 10 and eventName to Post/Put test
 #### Delete a certain party
 DELETE: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 
-## User
+## User API Calls
 Coming soon...
+
+## Party ID Naming Convention
+
+The UniquePartyID field, found in the Party.models.Party in the partyid field is created for a party using the following naming convention:
+COLLEGENAME:ORGANIZERID-PARTYNUMBER
+where PARTYNUMBER is with respect to the organizer

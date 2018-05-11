@@ -80,3 +80,10 @@ Coming soon...
 The UniquePartyID field, found in the Party.models.Party in the partyid field is created for a party using the following naming convention:
 COLLEGENAME:ORGANIZERID-PARTYNUMBER
 where PARTYNUMBER is with respect to the organizer
+
+## Miscellaneous
+heroku pg:reset DATABASE_URL --> Destroys existing database: only to be used in emergencies
+heroku run python manage.py flush --> resets data in database
+heroku run bash
+python manage.py makemigrations
+python manage.py migrate --run-syncdb --> implements changes made to models in database
