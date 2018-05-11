@@ -28,6 +28,6 @@ class PartyDetail(generics.RetrieveUpdateDestroyAPIView):
         partyID = self.kwargs['partyid']
        
         if partyID is not None:
-            queryset = queryset.filter(partyid = partyID)
+            queryset = queryset.filter(partyid = partyID)[0]
             
         return queryset
