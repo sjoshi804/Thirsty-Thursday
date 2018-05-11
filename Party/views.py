@@ -23,4 +23,9 @@ class PartyDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PartySerializer
     def get_queryset(self):
         queryset = Party.objects.all()
-        return queryset.filter(eventName = "Test")
+        partyName = self.request.GET.get('partytname_pk')
+       
+        if partyName is not None:
+            queryset = queryset.filter(eventName = partyName)
+            
+        return queryset
