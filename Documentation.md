@@ -47,7 +47,9 @@ PATCH: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 Sample Payload: Updates status to Live
 
 {
+
   "status": "Live"
+
 }
 
 #### Delete a certain party
