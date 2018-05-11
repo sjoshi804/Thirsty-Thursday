@@ -53,7 +53,7 @@ Sample Payload: Updates status to Live
     }
 
 #### Update more than one detail for a party
-PUT: 
+PUT: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 
 Sample payload: Updates partyid to 10 and eventName to Post/Put test
 (Note: Mandatory field i.e. blank=False, must be specified in the put request even if they are not being modified)
