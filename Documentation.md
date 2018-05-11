@@ -1,5 +1,5 @@
 # Documentation
-This explains how the following GET/POST/PATCH/DELETE requests can be used to interact with the Thursty Backend RESTful API.
+This explains how the following GET/POST/PUT/PATCH/DELETE requests can be used to interact with the Thursty Backend RESTful API.
 
 ## Party
 
@@ -52,6 +52,24 @@ Sample Payload: Updates status to Live
 
     }
 
+#### Update more than one detail for a party
+PUT: 
+
+Sample payload: Updates partyid to 10 and eventName to Post/Put test
+(Note: Mandatory field i.e. blank=False, must be specified in the put request even if they are not being modified)
+
+    {
+        "partyid": "10",
+         
+        "hostedBy": null,
+    
+        "eventName": "Post/Put test",
+        
+        "time": "2011-01-01T13:01:00Z",
+        
+        "location": "LA Downtown"
+    }
+    
 #### Delete a certain party
 DELETE: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 
