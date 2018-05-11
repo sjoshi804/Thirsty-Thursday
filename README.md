@@ -10,13 +10,13 @@ Allows access to list of all parties as well as details about a specific party, 
 ### Usage
 
 #### Get list of all parties
-GET: https://thirsty-thursday.herokuapp.com/party/
+GET: https://thirsty-thursday.herokuapp.com/party/all/
 
 #### Get details about one party
-GET: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
+GET: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
 
 #### Create new party
-POST: https://thirsty-thursday.herokuapp.com/party/
+POST: https://thirsty-thursday.herokuapp.com/party/all/
 
 Sample Payload:
 
@@ -41,7 +41,7 @@ Sample Payload:
     }
 
 #### Update a single detail for a certain party
-PATCH: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
+PATCH: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
 
 Sample Payload: Updates status to Live
 
@@ -52,7 +52,7 @@ Sample Payload: Updates status to Live
     }
 
 #### Update more than one detail for a party
-PUT: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
+PUT: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
 
 Sample payload: Updates partyid to 10 and eventName to Post/Put test
 (Note: Mandatory field i.e. blank=False, must be specified in the put request even if they are not being modified)
@@ -70,7 +70,7 @@ Sample payload: Updates partyid to 10 and eventName to Post/Put test
     }
     
 #### Delete a certain party
-DELETE: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
+DELETE: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
 
 ## User API Calls
 Coming soon...
