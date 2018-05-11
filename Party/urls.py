@@ -9,6 +9,6 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from Party import views
  
 urlpatterns = [
-    re_path(r'$', views.PartyList.as_view(), name='party-list'),
-    re_path(r'(?P<partyid>.+)/$', views.PartyDetail.as_view(), name='party-detail'),
+    re_path(r'/^$', views.PartyList.as_view(), name='party-list'),
+    re_path(r'^(?P<partyid>.+)/$', views.PartyDetail.as_view(), name='party-detail'),
 ]
