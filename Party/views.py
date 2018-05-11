@@ -31,3 +31,17 @@ class PartyDetail(generics.RetrieveUpdateDestroyAPIView):
             queryset = queryset.filter(partyid = partyID)
             
         return queryset
+
+class PartyManyDetail(generics.ListAPIView):
+    serializer_class = PartySerializer
+    lookup_field = 'partyid'
+    
+    def get_queryset(self):
+        queryset = Party.objects.all()
+
+        partyID = self.kwargs['partyid']
+
+        if partyID is not None:
+            queryset = queryset.filter(partyid_icontains = partyID)
+
+        return queryset
