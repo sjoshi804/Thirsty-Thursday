@@ -14,10 +14,11 @@ Allows access to list of all parties as well as details about a specific party, 
 GET: https://thirsty-thursday.herokuapp.com/party/
 
 #### Get details about one party
-GET: https://thirsty-thursday.herokuapp.com/party/[Unique Party ID]/
+GET: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 
 #### Create new party
 POST: https://thirsty-thursday.herokuapp.com/party/
+
 Sample Payload:
 {
     "partyid": "2",
@@ -31,14 +32,15 @@ Sample Payload:
 }
 
 #### Update details for a certain party
-PATCH: https://thirsty-thursday.herokuapp.com/party/[Unique Party ID]/
+PATCH: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
+
 Sample Payload: Updates status to Live
 {
   "status": "Live"
 }
 
 #### Delete a certain party
-DELETE: https://thirsty-thursday.herokuapp.com/party/[Unique Party ID]/
+DELETE: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 
 ## User
 Coming soon...
