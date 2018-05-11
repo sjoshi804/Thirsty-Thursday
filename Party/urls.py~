@@ -11,4 +11,6 @@ from Party import views
 urlpatterns = [
     re_path(r'all/$', views.PartyList.as_view(), name='party-list'),
     re_path(r'filter/(?P<partyid>.+)/$', views.PartyDetail.as_view(), name='party-detail'),
+    re_path(r'filter/college/(?P<partyid>.+)/$', views.PartyManyDetail.as_view(), name='party-college-details'),
+    re_path(r'filter/organized-by/(?P<partyid>.+)/$', views.PartyManyDetail.as_view(), name='party-organizer--details'),
 ]

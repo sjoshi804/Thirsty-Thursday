@@ -41,7 +41,7 @@ class PartyManyDetail(generics.ListAPIView):
 
         partyID = self.kwargs['partyid']
 
-        if partyID is not None:
-            queryset = queryset.filter(partyid_icontains = partyID)
+#        if partyID is not None:
+ #           queryset = queryset.filter(partyid_icontains = partyID)
 
         return queryset
