@@ -3,7 +3,7 @@ from django.db import models
 
 class Party(models.Model):   
     #Unique Party identifier
-    
+    partyid = models.CharField(max_length = 100, blank = False, null = False)
 
     #Basic Details
     createdAt = models.DateTimeField(auto_now_add = True)
