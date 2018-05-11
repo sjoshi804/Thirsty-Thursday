@@ -6,5 +6,4 @@ sleep 1
 git checkout master
 sleep 1
 git pull
-sleep 1
 git checkout Siddharth
