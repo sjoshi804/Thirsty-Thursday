@@ -20,23 +20,36 @@ GET: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 POST: https://thirsty-thursday.herokuapp.com/party/
 
 Sample Payload:
+
 {
+    
     "partyid": "2",
+    
     "hostedBy": null,
+    
     "eventName": "Post test",
+    
     "time": "2011-01-01T13:01:00Z",
+    
     "location": "LA Downtown",
+    
     "attended": [],
+    
     "paidVenmo": [],
+    
     "paidCash": []
+
 }
 
 #### Update details for a certain party
 PATCH: https://thirsty-thursday.herokuapp.com/party/[UniquePartyID]/
 
 Sample Payload: Updates status to Live
+
 {
+  
   "status": "Live"
+
 }
 
 #### Delete a certain party
