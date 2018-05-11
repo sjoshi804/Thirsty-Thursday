@@ -1,4 +1,6 @@
 #! /bin/sh
+git pull origin master:Siddharth
+sleep 1
 git push
 sleep 1
 git push origin Siddharth:master
