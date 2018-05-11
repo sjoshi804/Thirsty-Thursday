@@ -1,8 +1,4 @@
 #! /bin/sh
-git pull origin master:Gautam
-sleep 1
-git pull
-sleep 1
 git push
 sleep 1
 git push origin Gautam:master
