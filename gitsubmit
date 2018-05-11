@@ -1,9 +1,13 @@
 #! /bin/sh
+git pull origin master:Gautam
+sleep 1
+git pull
+sleep 1
 git push
 sleep 1
-git push origin Siddharth:master
+git push origin Gautam:master
 sleep 1
 git checkout master
 sleep 1
 git pull
-git checkout Siddharth
+git checkout Gautam
