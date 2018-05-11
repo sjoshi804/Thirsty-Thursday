@@ -26,7 +26,7 @@ class PartyDetail(generics.RetrieveUpdateDestroyAPIView):
         lookup_field = 'eventName'
         partyName = self.kwargs['partyname']
        
-        if partyName is not None:
-            queryset = queryset.filter(eventName = partyName)
+       # if partyName is not None:
+        #    queryset = queryset.filter(eventName = partyName)
             
         return queryset
