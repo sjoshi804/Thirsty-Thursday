@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from User.models import User, Operator, Orgranizer
+from User.models import User, Operator, Organizer
  
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
