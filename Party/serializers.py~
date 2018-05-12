@@ -2,8 +2,9 @@ from rest_framework import serializers
 from Party.models import Party
  
 class PartySerializer(serializers.HyperlinkedModelSerializer):
+    hostedBy = serializers.HyperlinkedIdentityField(view_name="User:User-Detail")
     class Meta:
         model = Party
-        fields = ('createdAt', 'partyid', 'hostedBy', 'eventName', 'time', 'location', 'attended', 'paidVenmo', 'paidCash', 'status')
+        fields = ('createdAt', 'partyid', 'eventName', 'time', 'location', 'status')
 
 

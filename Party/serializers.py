@@ -5,6 +5,6 @@ class PartySerializer(serializers.HyperlinkedModelSerializer):
     hostedBy = serializers.HyperlinkedIdentityField(view_name="User:User-Detail")
     class Meta:
         model = Party
-        fields = ('createdAt', 'partyid', 'eventName', 'time', 'location', 'status')
+        fields = ('createdAt', 'hostedBy', 'partyid', 'eventName', 'time', 'location', 'status')
 
 
