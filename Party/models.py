@@ -17,7 +17,7 @@ class Party(models.Model):
     guests = ArrayField(models.CharField(blank = True, max_length = 100)) #Indicate User's unique ID here
     guestsNameCache = ArrayField(models.CharField(blank = True, max_length = 200)) #Indicate User's name here
     entryTime = ArrayField(models.DateTimeField(blank = True))
-    exitTime = ArrayField(models.DateTimeFiled(blank = True))
+    exitTime = ArrayField(models.DateTimeField(blank = True))
     paymentMethod = ArrayField(models.CharField(default = "Cash", max_length = 50, blank = True))
     
     #Status
