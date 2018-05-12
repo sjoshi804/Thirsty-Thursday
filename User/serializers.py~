@@ -5,7 +5,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('uniqueID', 'firstName', 'lastName', 'college', 'email', 'phone', 'isOperator', 'isOrganizer',
-                  'goingTo', 'attendedParties', 'universityID')
+                 """ 'goingTo', 'attendedParties',""" 'universityID')
 
 class OperatorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
