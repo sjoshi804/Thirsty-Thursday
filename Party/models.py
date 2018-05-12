@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 
 class Party(models.Model):   
     #Unique Party identifier
-    partyid = models.CharField(max_length = 100, blank = False, null = False, unique = True)
+    partyid = models.CharField(max_length = 100, blank = False, null = False, unique = True, primary_key = True)
 
     #Basic Details
     createdAt = models.DateTimeField(auto_now_add = True)

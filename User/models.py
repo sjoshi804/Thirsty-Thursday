@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 
 class User(models.Model):
     #Unique Account Identifiers
-    uniqueID = models.CharField(null = False, blank = False, max_length = 30, unique = True)
+    uniqueID = models.CharField(null = False, blank = False, max_length = 30, unique = True, primary_key = True)
     universityID = models.CharField(default = "ERROR: no UID", blank = False, max_length = 20)    
 
     #Basic Information
@@ -32,7 +32,7 @@ class User(models.Model):
 
 class Operator(models.Model):
     #OneToOne mapping to User
-    user = models.CharField(max_length = 100, blank = False, unique = True) #contains the user uniqueID
+    user = models.CharField(max_length = 100, blank = False, unique = True, primary_key = True) #contains the user uniqueID
     
     #Parties that the operator has checkIn priveleges for - this fields stores the partyid
     checkInPermissionsFor = ArrayField(models.CharField(max_length = 100, blank = True))
@@ -42,7 +42,7 @@ class Operator(models.Model):
 
 class Organizer(models.Model):
     #OneToOne mapping to User
-    user = models.CharField(max_length = 100, blank = False, unique = True) #contains the user uniqueID
+    user = models.CharField(max_length = 100, blank = False, unique = True, primary_key = True) #contains the user uniqueID
     
     #Name of Organization that organizer hosts parties for
     organizationName = models.CharField(max_length = 100, blank = False)
