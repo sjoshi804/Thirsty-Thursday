@@ -16,7 +16,7 @@ class UserList(generics.ListCreateAPIView):
     serializer_class = UserSerializer
  
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        serializer.save()
  
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer

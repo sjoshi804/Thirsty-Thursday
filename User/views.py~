@@ -20,9 +20,29 @@ class UserList(generics.ListCreateAPIView):
  
 class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = UserSerializer
+    lookup_field = 'uniqueID'
     
     def get_queryset(self):
-        return User.objects.all().filter(user=self.request.user)
+        queryset = User.objects.all()
+        uniqueid = self.kwargs['uniqueID']
+        
+        if uniqueid is not None:
+            queryset = queryset.filter(uniqueID = uniqueid)
+        
+        return queryset
+
+class UserCollege(generics.ListAPIView):
+    serializer_class = UserSerializer
+    lookup_field = 'college'
+
+    def get_queryset(self):
+        queryset = User.objects.all()
+        collegeName = self.kwargs['college']
+
+        if collegeName is not None:
+            queryset = queryset.filter(college = collegeName)
+
+        return queryset
 
 #Operator API Views
 class OperatorList(generics.ListCreateAPIView):
