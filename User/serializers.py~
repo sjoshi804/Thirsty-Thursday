@@ -12,7 +12,7 @@ class OperatorSerializer(serializers.HyperlinkedModelSerializer):
         model = Operator
         fields = ('user', 'checkInPermissionsFor')
         
-class OrgranizerSerializer(serializers.HyperlinkedModelSerializer):
+class OrganizerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Organizer
         fields = ('user', 'organizationName', 'hostedParties', 'upcomingParties', 'currentParties')
