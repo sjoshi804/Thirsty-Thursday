@@ -4,8 +4,7 @@ from User.models import User, Operator, Organizer
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('uniqueID', 'firstName', 'lastName', 'college', 'email', 'phone', 'isOperator', 'isOrganizer',
-                 """ 'goingTo', 'attendedParties',""" 'universityID')
+        fields = ('uniqueID', 'universityID', 'firstName', 'lastName', 'college', 'email', 'phone', 'isOperator', 'isOrganizer')
 
 class OperatorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

@@ -2,8 +2,8 @@ from django.db import models
 # Create your models here.
 
 class User(models.Model):
-    #Unique Account Indentifier
-    uniqueID = models.CharField(null = False, max_length = 30, unique = True)
+    #Unique Account Identifiers
+    uniqueID = models.CharField(null = False, blank = False, max_length = 30, unique = True)
     universityID = models.CharField(default = "ERROR: no UID", blank = False, max_length = 20)    
 
     #Basic Information
@@ -19,24 +19,42 @@ class User(models.Model):
     isOperator = models.BooleanField(default = False)
     isOrganizer = models.BooleanField(default = False)
     
-    #Party-goer fields
-    goingTo = models.ManyToManyField('Party.Party', related_name = '%(class)s_goingTo')
-    attendedParties = models.ManyToManyField('Party.Party', related_name = '%(class)s_attenededParties')
+    #Party-goer fields - these fields store the partyid
+    goingTo = ArrayField(models.CharField(max_length = 100, blank = True))
+    attendedParties = ArrayField(models.CharField(max_length = 100, blank = True))
     
+    #Party-goer cache fields
+    goingToNameCache = ArrayField(models.CharField(max_length = 100, blank = True))
+    attendedPartiesNameCache = ArrayField(models.CharField(max_length = 100, blank = True))
+    attendedPartiesEntryCache = ArrayField(models.DateTimeField(blank = True))
+    attendedPartiesExitCache = ArrayField(models.DateTimeField (blank = True))
+
 class Operator(models.Model):
     #OneToOne mapping to User
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    user = models.CharField(max_length = 100, blank = False, unique = True) #contains the user uniqueID
     
-    #Parties that the operator has checkIn priveleges for
-    checkInPermissionsFor = models.ManyToManyField('Party.Party', related_name = '%(class)s_checkInPermissionsFor')
+    #Parties that the operator has checkIn priveleges for - this fields stores the partyid
+    checkInPermissionsFor = ArrayField(models.CharField(max_length = 100, blank = True))
     
+    #Party Cache Fields
+    checkInPermissionsForNameCache = ArrayField(models.CharField(max_length = 100, blank = True))
+
 class Organizer(models.Model):
     #OneToOne mapping to User
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    user = models.CharField(max_length = 100, blank = False, unique = True) #contains the user uniqueID
     
     #Name of Organization that organizer hosts parties for
-    organizationName = models.TextField(null = False)
+    organizationName = models.CharField(max_length = 100, blank = False)
+    collegeName = models.CharField(max_length = 100, blank = True, default = "UCLA")
     
-    #Parties that are associated with this organizer
-    #Check party field to see status of the party (Upcoming, Current, Past)
-    parties = models.ForeignKey('Party.Party', on_delete=models.CASCADE)
+    #Parties that are associated with this organizer - this field stores the partyid
+    pastParties = ArrayField(models.CharField(max_length = 100, blank = True))
+    currentParties = ArrayField(models.CharField(max_length = 100, blank = True))
+    upcomingParties = ArrayField(models.CharField(max_length = 100, blank = True))
+
+    #Party Cache Fields
+    pastPartiesNameCache = ArrayField(models.CharField(max_length = 100, blank = True))
+    currentPartiesNameCache = ArrayField(models.CharField(max_length = 100, blank = True))
+    upcomingPartiesNameCache = ArrayField(models.CharField(max_length = 100, blank = True))
+
+
