@@ -51,13 +51,15 @@ class PartyCheckIn(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = 'partyid'
     
     def perform_update(self, serializer):
-        querysetqueryset = Party.objects.all()
+        queryset = Party.objects.all()
 
         partyID = self.kwargs['partyid']
 
         if partyID is not None:
             party = queryset.filter(partyid = partyID)
         else:
-            return HttpResponse("No such party")
+            return error object
         
-        party.guests.append
+        party.guests.append(seriaizer.validated_data['guests'])
+        party.save()
+        return party

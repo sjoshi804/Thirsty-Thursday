@@ -58,7 +58,7 @@ class PartyCheckIn(generics.RetrieveUpdateDestroyAPIView):
         if partyID is not None:
             party = queryset.filter(partyid = partyID)
         else:
-            return error object
+            return rest_framework.exceptions.server_error
         
         party.guests.append(seriaizer.validated_data['guests'])
         party.save()
