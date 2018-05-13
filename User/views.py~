@@ -58,19 +58,6 @@ class OperatorDetail(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         return Operator.objects.all().filter(user=self.request.user)
 
-class OperatorCollege(generics.ListAPIView):
-    serializer_class = OperatorSerializer
-    lookup_field = 'college'
-
-    def get_queryset(self):
-        queryset = Operator.objects.all()
-        collegeName = self.kwargs['college']
-
-        if collegeName is not None:
-            queryset = queryset.filter(college = collegeName)
-
-        return queryset
-
 #Organizer API View
 class OrganizerList(generics.ListCreateAPIView):
     queryset = Organizer.objects.all()
@@ -85,16 +72,3 @@ class OrganizerDetail(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Organizer.objects.all().filter(user=self.request.user)
-
-class OrganizerCollege(generics.ListAPIView):
-    serializer_class = OrganizerSerializer
-    lookup_field = 'college'
-
-    def get_queryset(self):
-        queryset = Organizer.objects.all()
-        collegeName = self.kwargs['college']
-
-        if collegeName is not None:
-            queryset = queryset.filter(college = collegeName)
-
-        return queryset
