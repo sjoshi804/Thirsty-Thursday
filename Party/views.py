@@ -45,3 +45,19 @@ class PartyManyDetail(generics.ListAPIView):
            queryset = queryset.filter(partyid__icontains = partyID)
 
         return queryset
+
+class PartyCheckIn(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = PartySerializer
+    lookup_field = 'partyid'
+    
+    def perform_update(self, serializer):
+        querysetqueryset = Party.objects.all()
+
+        partyID = self.kwargs['partyid']
+
+        if partyID is not None:
+            party = queryset.filter(partyid = partyID)
+        else:
+            return HttpResponse("No such party")
+        
+        party.guests.append

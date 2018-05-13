@@ -10,6 +10,7 @@ class Party(models.Model):
     createdAt = models.DateTimeField(auto_now_add = True)
     eventName = models.CharField(max_length = 100, blank = False, default = "Thursty Party")
     hostedBy = models.CharField(max_length = 100, blank = False)
+    hostedByNameCache = models.CharField(max_length = 100, blank = False) #Put organization name here
     time = models.DateTimeField(null = False)
     location = models.CharField(max_length = 100, blank = False, null = False)
     
