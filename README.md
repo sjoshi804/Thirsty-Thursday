@@ -21,27 +21,47 @@ POST: https://thirsty-thursday.herokuapp.com/party/all/
 Sample Payload:
 
     {
+        
+        "partyid": "UCLA:105032378-1",
+ 
+        "createdAt": "2018-05-14T03:31:52.987249Z",
+ 
+        "eventName": "Put/Patch Test",
+ 
+        "hostedBy": "UCLA:105032378",
 
-        "partyid": "2",
+        "hostedByNameCache": "Siddharth",
+        
+        "status": "Current",
+        
+        "time": "2018-05-12T21:42:22.890158Z",
+        
+        "location": "Canyon Point",
+        
+        "guests": [
+            "UCLA:105032378"
+        ],
+        
+        "guestsNameCache": [
+            "Siddharth"
+        ],
+        
+        "entryTime": [
+            "2018-05-12T21:42:22.890158Z"
+        ],
+        
+        "exitTime": [
+            "2018-05-12T21:52:22.890158Z"
+        ],
+        
+        "paymentMethod": [
+            "Cash"
+        ]
     
-        "hostedBy": null,
-    
-        "eventName": "Post test",
-    
-        "time": "2011-01-01T13:01:00Z",
-    
-        "location": "LA Downtown",
-    
-        "attended": [],
-    
-        "paidVenmo": [],
-    
-        "paidCash": []
-
     }
 
 #### Update a single detail for a certain party
-PATCH: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
+PATCH: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
 
 Sample Payload: Updates status to Live
 
@@ -54,20 +74,10 @@ Sample Payload: Updates status to Live
 #### Update more than one detail for a party
 PUT: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
 
-Sample payload: Updates partyid to 10 and eventName to Post/Put test
+Sample payload: Updates Party ID to UCLA:105032378-2
 (Note: Mandatory field i.e. blank=False, must be specified in the put request even if they are not being modified)
 
-    {
-        "partyid": "10",
-         
-        "hostedBy": null,
-    
-        "eventName": "Post/Put test",
-        
-        "time": "2011-01-01T13:01:00Z",
-        
-        "location": "LA Downtown"
-    }
+
     
 #### Delete a certain party
 DELETE: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
