@@ -13,7 +13,7 @@ Allows access to list of all parties as well as details about a specific party, 
 GET: https://thirsty-thursday.herokuapp.com/party/all/
 
 #### Get details about one party
-GET: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
+GET: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
 
 #### Create new party
 POST: https://thirsty-thursday.herokuapp.com/party/all/
@@ -22,11 +22,9 @@ Sample Payload:
 
     {
         
-        "partyid": "UCLA:105032378-1",
+        "partyid": "UCLA:105032378-1", //Refer to party naming convention
  
-        "createdAt": "2018-05-14T03:31:52.987249Z",
- 
-        "eventName": "Put/Patch Test",
+        "eventName": "Post Test",
  
         "hostedBy": "UCLA:105032378",
 
@@ -72,15 +70,37 @@ Sample Payload: Updates status to Live
     }
 
 #### Update more than one detail for a party
-PUT: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
+PUT: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
 
-Sample payload: Updates Party ID to UCLA:105032378-2
+Sample payload: Updates Party ID to UCLA:105032378-2 and changes the time
 (Note: Mandatory field i.e. blank=False, must be specified in the put request even if they are not being modified)
 
+{
+        
+        "partyid": "UCLA:105032378-2",
+ 
+        "eventName": "Post Test",
+ 
+        "hostedBy": "UCLA:105032378",
 
+        "hostedByNameCache": "Siddharth",
+        
+        "status": "Current",
+        
+        "time": "2018-05-12T22:42:22.890158Z",
+        
+        "location": "Canyon Point",
+    
+    }
     
 #### Delete a certain party
-DELETE: https://thirsty-thursday.herokuapp.com/party/filter/[UniquePartyID]/
+DELETE: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
+
+#### Get all parties for a particular college
+GET: https://thirsty-thursday.herokuapp.com/party/filter/college/[CollegeName]/
+
+#### Get all parties for a particular organizer
+GET: https://thirsty-thursday.herokuapp.com/party/filter/organized-By/[OrganizerUniqueID]/
 
 ## User API Calls
 Coming soon...
