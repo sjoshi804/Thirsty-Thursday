@@ -75,7 +75,7 @@ PUT: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
 Sample payload: Updates Party ID to UCLA:105032378-2 and changes the time
 (Note: Mandatory field i.e. blank=False, must be specified in the put request even if they are not being modified)
 
-{
+    {
         
         "partyid": "UCLA:105032378-2",
  
@@ -90,8 +90,8 @@ Sample payload: Updates Party ID to UCLA:105032378-2 and changes the time
         "time": "2018-05-12T22:42:22.890158Z",
         
         "location": "Canyon Point",
-    
-    }
+        
+        }
     
 #### Delete a certain party
 DELETE: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
