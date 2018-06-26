@@ -60,6 +60,6 @@ class PartyCheckIn(generics.RetrieveUpdateDestroyAPIView):
         else:
             return rest_framework.exceptions.server_error
         
-        party.guests.append(seriaizer.validated_data['guests'])
+        party.guests.append(self.kwargs['guest'])
         party.save()
         return party
