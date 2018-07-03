@@ -46,7 +46,7 @@ class PartyManyDetail(generics.ListAPIView):
 
         return queryset
 
-class PartyCheckIn(generics.RetrieveAPIView):
+class PartyCheckin(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = PartySerializer
     lookup_field = 'partyid'
     def get_queryset(self):
