@@ -46,5 +46,5 @@ class PartyManyDetail(generics.ListAPIView):
 
         return queryset
 
-    
-
+class 
+        

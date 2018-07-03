@@ -46,11 +46,16 @@ class PartyManyDetail(generics.ListAPIView):
 
         return queryset
 
-class PartyCheckIn(generics.UpdateAPIView):
+class PartyCheckIn(generics.RetrieveAPIView):
     serializer_class = PartySerializer
     lookup_field = 'partyid'
-    
-    def partial_update(self):
+    def get_queryset(self):
         queryset = Party.objects.all()
-        return queryset
 
+        partyID = self.kwargs['partyid']
+
+        if partyID is not None:
+            queryset = queryset.filter(partyid = partyID)
+
+        return queryset
+        
