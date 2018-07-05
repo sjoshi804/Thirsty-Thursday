@@ -14,7 +14,7 @@ class Party(models.Model):
     time = models.DateTimeField(null = False)
     location = models.CharField(max_length = 100, blank = False, null = False)
     
-    #Guest List - indices correspond across these fields to indicate one guest instance 
+    #Guest Instance Field - each attendance (or even payment) is a guest log instance
     guests = ArrayField(models.CharField(blank = True, max_length = 100)) #Indicate User's unique ID here
     guestsNameCache = ArrayField(models.CharField(blank = True, max_length = 200)) #Indicate User's name here
     entryTime = ArrayField(models.DateTimeField(blank = True))
