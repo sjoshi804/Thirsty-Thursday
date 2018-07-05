@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/2.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
-import dj_database_url
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'thirsty-thursday.herokuapp.com', 'te
 # Application definition
 
 INSTALLED_APPS = [
-   # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
     'Party',
     'rest_framework',
     'User',
+    'Guest',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'ThirstyThursday.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = { 'default': dj_database_url.config() }
+DATABASES = {'default': dj_database_url.config()}
 
 
 # Password validation
