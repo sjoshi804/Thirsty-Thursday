@@ -1,25 +1,17 @@
 #-----------------------
-# Purpose: Stores all urls associated with user, operator and organizer side of the app
+# Purpose: Stores all urls associated with guest check in side of the app
 # Author: Siddharth Joshi
-# Date Created: 05/08/18
+# Date Created: 07/05/18
 #------------------------                                                                                                                                                                                  
 from django.urls import re_path
-from rest_framework.urlpatterns import format_suffix_patterns
-from User import views
+#from rest_framework.urlpatterns import format_suffix_patterns
+from Guest import views
 
 urlpatterns = [
-   #Regular User urls
-   re_path(r'all/$', views.UserList.as_view(), name='user-list'),
-   re_path(r'search/(?P<id>)/$', views.UserDetail.as_view(), name='user-detail'),
-   re_path(r'filter/college/(?P<college>)/$', views.UserCollege.as_view(), name='user-college-detail'),
-   
-   #Operator urls
-   re_path(r'all/operator/$', views.OperatorList.as_view(), name='operator-list'),
-   re_path(r'operator/search/(?P<id>)/$', views.OperatorDetail.as_view(), name='operator-detail'),
-   re_path(r'operator/filter/college/(?P<college>)/$', views.OperatorCollege.as_view(), name='operator-college-detail'),
-   
-   #Organizer urls
-   re_path(r'organizer/all/$', views.OrganizerList.as_view(), name='organizer-list'),
-   re_path(r'organizer/search/(?P<id>)/$', views.OrganizerDetail.as_view(), name='organizer-detail'),
-   re_path(r'organizer/filter/college/(?P<college>)/$', views.OrganizerCollege.as_view(), name='organizer-college-detail'),
+    #GuestInstance URLs
+    re_path(r'all/$', views.GuestList.as_view(), name='guest-all'),
+    re_path(r'search/(?P<guestinstanceid>.+)/$', views.GuestDetail.as_view(), name='guest-detail'),
+    re_path(r'filter/college/(?P<partyid>.+)/$', views.GuestList.as_view(), name='guest-college-details'),
+    re_path(r'filter/organized-by/(?P<partyid>.+)/$', views.GuestList.as_view(), name='guest-organizer-details'),
+    re_path(r'checkin/(?P<partyid>.+)/$', views.GuestCheckIn, name = 'guest-check-in')
 ]
