@@ -5,8 +5,6 @@
 #------------------------
 from Party.models import Party
 from rest_framework import generics
-from rest_framework.response import Response
-from rest_framework.reverse import reverse
  
 from Party.serializers import PartySerializer
  
@@ -42,7 +40,7 @@ class PartyManyDetail(generics.ListAPIView):
         partyID = self.kwargs['partyid']
 
         if partyID is not None:
-           queryset = queryset.filter(partyid__icontains = partyID)
+            queryset = queryset.filter(partyid__icontains = partyID)
 
         return queryset
 

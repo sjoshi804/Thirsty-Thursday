@@ -1,100 +1,45 @@
 #-----------------------
-# Purpose: all views associated with organizer's side of the app
+# Purpose: Views dealing with guest checkin, checkout and payment
 # Author: Siddharth Joshi
-# Date Created: 04/18/18
+# Date Created: 07/04/18
 #------------------------
-from User.models import User, Operator, Organizer
+from Guest.models import Guest
 from rest_framework import generics
-from rest_framework.response import Response
-from rest_framework.reverse import reverse
- 
-from User.serializers import UserSerializer, OperatorSerializer, OrganizerSerializer
+from Guest.serializers import GuestSerializer
 
-#User API Views
-class UserList(generics.ListCreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+#Guest CheckIn
+class GuestCheckIn(generics.CreateAPIView):
+    queryset = Guest.objects.all()
+    serializer_class = GuestSerializer
  
     def perform_create(self, serializer):
         serializer.save()
  
-class UserDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = UserSerializer
-    lookup_field = 'uniqueID'
+#Individual Guest Instance - used for updating payment, and exit time etc. 
+class GuestDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = GuestSerializer
+    lookup_field = 'guestInstanceID'
+    def get_queryset(self):
+        queryset = Guest.objects.all()
+
+        guestInstanceID = self.kwargs['guestInstanceID']
+       
+        if guestInstanceID is not None:
+            queryset = queryset.filter(guestinstanceid = guestInstanceID)
+            
+        return queryset
+
+#Guest List for Party
+class GuestList(generics.ListAPIView):
+    serializer_class = GuestSerializer
+    lookup_field = 'partyid'
     
     def get_queryset(self):
-        queryset = User.objects.all()
-        uniqueid = self.kwargs['uniqueID']
-        
-        if uniqueid is not None:
-            queryset = queryset.filter(uniqueID = uniqueid)
-        
-        return queryset
+        queryset = Party.objects.all()
 
-class UserCollege(generics.ListAPIView):
-    serializer_class = UserSerializer
-    lookup_field = 'college'
+        partyID = self.kwargs['partyid']
 
-    def get_queryset(self):
-        queryset = User.objects.all()
-        collegeName = self.kwargs['college']
-
-        if collegeName is not None:
-            queryset = queryset.filter(college = collegeName)
-
-        return queryset
-
-#Operator API Views
-class OperatorList(generics.ListCreateAPIView):
-    queryset = Operator.objects.all()
-    serializer_class = OperatorSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
-class OperatorDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = OperatorSerializer
-
-    def get_queryset(self):
-        return Operator.objects.all().filter(user=self.request.user)
-
-class OperatorCollege(generics.ListAPIView):
-    serializer_class = OperatorSerializer
-    lookup_field = 'college'
-
-    def get_queryset(self):
-        queryset = Operator.objects.all()
-        collegeName = self.kwargs['college']
-
-        if collegeName is not None:
-            queryset = queryset.filter(college = collegeName)
-
-        return queryset
-
-#Organizer API View
-class OrganizerList(generics.ListCreateAPIView):
-    queryset = Organizer.objects.all()
-    serializer_class = OrganizerSerializer
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
-
-class OrganizerDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = OrganizerSerializer
-
-    def get_queryset(self):
-        return Organizer.objects.all().filter(user=self.request.user)
-
-class OrganizerCollege(generics.ListAPIView):
-    serializer_class = OrganizerSerializer
-    lookup_field = 'college'
-
-    def get_queryset(self):
-        queryset = Organizer.objects.all()
-        collegeName = self.kwargs['college']
-
-        if collegeName is not None:
-            queryset = queryset.filter(college = collegeName)
+        if GuestID is not None:
+            queryset = queryset.filter(partyid__icontains = partyID)
 
         return queryset
