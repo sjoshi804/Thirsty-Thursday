@@ -35,7 +35,7 @@ class GuestList(generics.ListAPIView):
     lookup_field = 'partyid'
     
     def get_queryset(self):
-        queryset = Party.objects.all()
+        queryset = Guest.objects.all()
 
         partyID = self.kwargs['partyid']
 
