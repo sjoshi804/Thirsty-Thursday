@@ -2,7 +2,7 @@ from django.db import models
 
 class Guest(models.Model):
     #Unique Identifiers
-    guestInstanceID = models.CharField(null = False, blank = False, max_length = 50, unique = True, primaryKey = True)
+    guestInstanceID = models.CharField(null = False, blank = False, max_length = 50, unique = True, primary_key = True)
     partyID = models.CharField(null = False, blank = False, max_length = 20)
     userID = models.CharField(null = False, blank = False, max_length = 30)
 
