@@ -54,6 +54,8 @@ class GuestAttended(generics.ListAPIView):
         userID = self.kwargs['pk']
 
         if userID is not None:
-            queryset = queryset.filter(userID = userID)
+            queryset = queryset.filter(userID = userID).filter(status = "Attended")
 
         return queryset
+
+# TODO: Create view for guest interested parties as well
