@@ -32,14 +32,14 @@ class GuestDetail(generics.RetrieveUpdateDestroyAPIView):
 #Guest List for Party
 class GuestList(generics.ListAPIView):
     serializer_class = GuestSerializer
-    lookup_field = 'partyid'
+    lookup_field = 'partyID'
     
     def get_queryset(self):
         queryset = Guest.objects.all()
 
         partyID = self.kwargs['pk']
 
-        if GuestID is not None:
+        if partyID is not None:
             queryset = queryset.filter(partyid__icontains = partyID)
 
         return queryset
