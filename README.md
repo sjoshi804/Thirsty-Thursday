@@ -102,14 +102,70 @@ GET: https://thirsty-thursday.herokuapp.com/party/filter/college/[CollegeName]/
 #### Get all parties for a particular organizer
 GET: https://thirsty-thursday.herokuapp.com/party/filter/organized-By/[OrganizerUniqueID]/
 
+##Guest API Calls
+
+### What it does
+
+Provides functionality to check in guest or check out a guest.
+Also allows the user to view the guest instances for a single party (as well as filter them by college, organizer or view all of them).  
+
+###Usage
+
+#### Get all guest instances
+GET: https://test-thursday.herokuapp.com/guest/all/
+
+#### Check in new guest
+POST: https://test-thursday.herokuapp.com/guest/checkin/ HTTP/1.1
+
+{
+
+    "guestInstanceID": "UCLA:105032378-1UCLA:000000001",
+
+    "partyID": "UCLA:105032378-1",
+
+    "userID": "UCLA:000000001",
+
+    "firstName": "Joesephine",
+
+    "lastName": "Bruin",
+
+    "college": "UCLA",
+
+    "entryTime": "2018-07-06T23:00:00Z",
+
+    "exitTime": "1970-01-01T00:00:00Z",
+
+    "paymentMethod": "Venmo"
+
+}
+
+#### Check out guest
+
+PATCH:  https://test-thursday.herokuapp.com/guest/search/UCLA:105032378-1UCLA:000000001/ HTTP/1.1
+
+{
+
+    "exitTime": "2018-07-07T00:00:00Z"
+
+}
+
+#### Filter by Party
+GET: https://test-thursday.herokuapp.com/guest/party/UCLA:105032378-1/ HTTP/1.1
+
 ## User API Calls
 Coming soon...
 
-## Party ID Naming Convention
+## Naming Conventions
 
-The UniquePartyID field, found in the Party.models.Party in the partyid field is created for a party using the following naming convention:
+### Party ID 
+
+The unique Party ID found in the Party.models.Party model in the partyid field is created for a party using the following naming convention:
 COLLEGENAME:ORGANIZERID-PARTYNUMBER
 where PARTYNUMBER is with respect to the organizer
+
+### User ID
+The unique User ID found in the User.models.User field in the uniqueID field is created for a user using the following naming convention:
+COLLEGENAME:USERID - where USERID is the user's college identification number. 
 
 ## Miscellaneous
 heroku pg:reset DATABASE_URL --> Destroys existing database: only to be used in emergencies
