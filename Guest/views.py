@@ -22,10 +22,10 @@ class GuestDetail(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         queryset = Guest.objects.all()
 
-        guestInstanceID = self.kwargs['guestinstanceid']
+        guestinstanceid = self.kwargs['guestinstanceid']
        
         if guestInstanceID is not None:
-            queryset = queryset.filter(guestinstanceid = guestInstanceID)
+            queryset = queryset.filter(guestInstanceID = guestinstanceid)
             
         return queryset
 
