@@ -8,7 +8,7 @@ from django.urls import re_path
 from Guest import views
 
 urlpatterns = [
-    #GuestInstance URLs
+    #Guest Instance URLs
     re_path(r'all/$', views.GuestCheckIn.as_view(), name='guest-all'),
     re_path(r'search/(?P<pk>.+)/$', views.GuestDetail.as_view(), name='guest-detail'),
     re_path(r'filter/college/(?P<pk>.+)/$', views.GuestList.as_view(), name='guest-college-details'),

@@ -1,0 +1,87 @@
+# Party Creation
+POST https://thirsty-thursday.herokuapp.com/party/all/ HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "partyid": "UCLA:105032378-1", //Refer to party naming convention
+
+    "eventName": "Post Test",
+
+    "hostedBy": "UCLA:105032378",
+
+    "hostedByNameCache": "Siddharth",
+    
+    "status": "Current",
+    
+    "time": "2018-05-12T21:42:22.890158Z",
+    
+    "location": "Canyon Point",
+    
+    "guests": [
+        "UCLA:105032378"
+    ],
+    
+    "guestsNameCache": [
+        "Siddharth"
+    ],
+    
+    "entryTime": [
+        "2018-05-12T21:42:22.890158Z"
+    ],
+    
+    "exitTime": [
+        "2018-05-12T21:52:22.890158Z"
+    ],
+    
+    "paymentMethod": [
+        "Cash"
+    ]
+
+}
+
+###
+# Update a single detail for a certain party
+PATCH https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/ HTTP/1.1
+Content-Type: application/json
+
+{
+
+    "status": "Live"
+
+}
+
+###
+# Update more than one detail for a party
+PUT https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/ HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "partyid": "UCLA:105032378-2",
+
+    "eventName": "Post Test",
+
+    "hostedBy": "UCLA:105032378",
+
+    "hostedByNameCache": "Siddharth",
+    
+    "status": "Current",
+    
+    "time": "2018-05-12T22:42:22.890158Z",
+    
+    "location": "Canyon Point",
+    
+}
+
+###
+# Delete a certain party
+DELETE https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/ HTTP/1.1
+
+###
+# Get all parties for a particular college
+GET https://thirsty-thursday.herokuapp.com/party/filter/college/[CollegeName]/ HTTP/1.1
+
+###
+# Get all parties for a particular organizer
+GET https://thirsty-thursday.herokuapp.com/party/filter/organized-By/[OrganizerUniqueID]/ HTTP/1.1
