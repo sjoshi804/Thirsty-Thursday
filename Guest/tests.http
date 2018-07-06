@@ -3,7 +3,7 @@ GET https://test-thursday.herokuapp.com/guest/all/
 
 ###
 # Check in new guest
-POST https://test-thursday.herokuapp.com/guest/checkin/ HTTP/1.1
+POST https://test-thursday.herokuapp.com/guest/check-in/ HTTP/1.1
 content-type: application/json
 
 {

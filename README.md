@@ -95,7 +95,7 @@ Also allows the user to view the guest instances for a single party (as well as 
 GET: https://test-thursday.herokuapp.com/guest/all/
 
 #### Check in new guest
-POST: https://test-thursday.herokuapp.com/guest/checkin/ 
+POST: https://test-thursday.herokuapp.com/guest/check-in/ 
 
 Sample Payload: Checks in new Guest (UCLA:000000001) to party (UCLA:105032378-1) with fields for basic information, entry time and payment method filled correctly. Exit time is populated by null value i.e. EPOCH Time (1970-01-01T00:00:00Z)
 
