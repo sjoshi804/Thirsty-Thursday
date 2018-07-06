@@ -13,14 +13,7 @@ class Party(models.Model):
     hostedByNameCache = models.CharField(max_length = 100, blank = False) #Put organization name here
     time = models.DateTimeField(null = False)
     location = models.CharField(max_length = 100, blank = False, null = False)
-    
-    '''#Guest Instance Field - each attendance (or even payment) is a guest log instance
-    guests = ArrayField(models.CharField(blank = True, max_length = 100)) #Indicate User's unique ID here
-    guestsNameCache = ArrayField(models.CharField(blank = True, max_length = 200)) #Indicate User's name here
-    entryTime = ArrayField(models.DateTimeField(blank = True))
-    exitTime = ArrayField(models.DateTimeField(blank = True))
-    paymentMethod = ArrayField(models.CharField(default = "Cash", max_length = 50, blank = True))
-    '''
+
     #Status
     status = models.CharField(max_length = 20, blank = False, default = "Upcoming",)
 

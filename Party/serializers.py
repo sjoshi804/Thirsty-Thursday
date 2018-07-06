@@ -4,6 +4,6 @@ from Party.models import Party
 class PartySerializer(serializers.ModelSerializer):
     class Meta:
         model = Party
-        fields = ('partyid', 'createdAt', 'eventName', 'hostedBy', 'hostedByNameCache', 'status', 'time', 'location', 'guests', 'guestsNameCache', 'entryTime', 'exitTime', 'paymentMethod')
+        fields = ('partyid', 'createdAt', 'eventName', 'hostedBy', 'hostedByNameCache', 'status', 'time', 'location')
 
 
