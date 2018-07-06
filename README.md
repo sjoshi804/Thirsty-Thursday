@@ -157,13 +157,16 @@ Coming soon...
 
 ### Party ID 
 
-The unique Party ID found in the Party.models.Party model in the partyid field is created for a party using the following naming convention:
+The unique Party ID found in the Party.models.Party model in the partyID field is created for a party using the following naming convention:
 COLLEGENAME:ORGANIZERID-PARTYNUMBER
 where PARTYNUMBER is with respect to the organizer
 
 ### User ID
 The unique User ID found in the User.models.User field in the uniqueID field is created for a user using the following naming convention:
 COLLEGENAME:USERID - where USERID is the user's college identification number. 
+
+### Guest Instance ID
+The unique Guest Instance ID found in the Guest.models.Guest model in the guestInstanceID field is created for a guest instance by concatenating the Party ID and the User ID. 
 
 ## Miscellaneous
 heroku pg:reset DATABASE_URL --> Destroys existing database: only to be used in emergencies
