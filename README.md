@@ -72,7 +72,7 @@ Sample Payload: Updates status to Live
 #### Update more than one detail for a party
 PUT: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
 
-Sample payload: Updates Party ID to UCLA:105032378-2 and changes the time
+Sample Payload: Updates Party ID to UCLA:105032378-2 and changes the time
 (Note: Mandatory field i.e. blank=False, must be specified in the put request even if they are not being modified)
 
     {
@@ -102,20 +102,22 @@ GET: https://thirsty-thursday.herokuapp.com/party/filter/college/[CollegeName]/
 #### Get all parties for a particular organizer
 GET: https://thirsty-thursday.herokuapp.com/party/filter/organized-By/[OrganizerUniqueID]/
 
-##Guest API Calls
+## Guest API Calls
 
 ### What it does
 
 Provides functionality to check in guest or check out a guest.
 Also allows the user to view the guest instances for a single party (as well as filter them by college, organizer or view all of them).  
 
-###Usage
+### Usage
 
 #### Get all guest instances
 GET: https://test-thursday.herokuapp.com/guest/all/
 
 #### Check in new guest
 POST: https://test-thursday.herokuapp.com/guest/checkin/ HTTP/1.1
+
+Sample Payload: Checks in new Guest (UCLA:000000001) to party (UCLA:105032378-1) with fields for basic information, entry time and payment method filled correctly. Exit time is populated by null value i.e. EPOCH Time (1970-01-01T00:00:00Z)
 
 {
 
@@ -140,8 +142,9 @@ POST: https://test-thursday.herokuapp.com/guest/checkin/ HTTP/1.1
 }
 
 #### Check out guest
-
 PATCH:  https://test-thursday.herokuapp.com/guest/search/UCLA:105032378-1UCLA:000000001/ HTTP/1.1
+
+Sample Payload: Sets the exit time for guest UCLA:000000001 at party UCLA:105032378-1 to 12 A.M. on 07/07/18
 
 {
 
