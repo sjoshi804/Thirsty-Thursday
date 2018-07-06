@@ -22,7 +22,7 @@ class GuestDetail(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         queryset = Guest.objects.all()
 
-        guestinstanceid = self.kwargs['guestinstanceid']
+        guestinstanceid = self.kwargs['pk']
        
         if guestinstanceid is not None:
             queryset = queryset.filter(guestInstanceID = guestinstanceid)
@@ -37,7 +37,7 @@ class GuestList(generics.ListAPIView):
     def get_queryset(self):
         queryset = Guest.objects.all()
 
-        partyID = self.kwargs['partyid']
+        partyID = self.kwargs['pk']
 
         if GuestID is not None:
             queryset = queryset.filter(partyid__icontains = partyID)
