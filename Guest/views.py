@@ -24,7 +24,7 @@ class GuestDetail(generics.RetrieveUpdateDestroyAPIView):
 
         guestinstanceid = self.kwargs['guestinstanceid']
        
-        if guestInstanceID is not None:
+        if guestinstanceid is not None:
             queryset = queryset.filter(guestInstanceID = guestinstanceid)
             
         return queryset
