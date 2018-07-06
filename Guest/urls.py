@@ -9,9 +9,9 @@ from Guest import views
 
 urlpatterns = [
     #GuestInstance URLs
-    re_path(r'all/$', views.GuestList.as_view(), name='guest-all'),
+    re_path(r'all/$', views.GuestCheckIn.as_view(), name='guest-all'),
     re_path(r'search/(?P<pk>.+)/$', views.GuestDetail.as_view(), name='guest-detail'),
     re_path(r'filter/college/(?P<pk>.+)/$', views.GuestList.as_view(), name='guest-college-details'),
     re_path(r'filter/organized-by/(?P<pk>.+)/$', views.GuestList.as_view(), name='guest-organizer-details'),
-    re_path(r'checkin/(?P<pk>.+)/$', views.GuestCheckIn, name = 'guest-check-in')
+    re_path(r'checkin/(?P<pk>.+)/$', views.GuestCheckIn.as_view(), name = 'guest-check-in')
 ]

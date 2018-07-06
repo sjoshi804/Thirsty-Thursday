@@ -8,7 +8,7 @@ from rest_framework import generics
 from Guest.serializers import GuestSerializer
 
 #Guest CheckIn
-class GuestCheckIn(generics.CreateAPIView):
+class GuestCheckIn(generics.ListCreateAPIView):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
  
