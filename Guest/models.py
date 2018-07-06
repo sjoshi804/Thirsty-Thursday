@@ -12,6 +12,6 @@ class Guest(models.Model):
     college = models.CharField(default = "UCLA", max_length = 100)
 
     #Guest Instance Specific Information
-    entryTime = models.DateTimeField(blank = True)
-    exitTime = models.DateTimeField(blank = True)
+    entryTime = models.DateTimeField(blank = True, null = True)
+    exitTime = models.DateTimeField(blank = True, null = True)
     paymentMethod = models.CharField(default = "Not Paid", max_length = 50, blank = True)
