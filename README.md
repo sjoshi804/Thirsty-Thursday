@@ -18,7 +18,7 @@ GET: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
 #### Create new party
 POST: https://thirsty-thursday.herokuapp.com/party/all/
 
-Sample Payload:
+Sample Payload: Created a new Party organized by UCLA:105032378 (using the naming convention for partyid field). Fills in other relevant details. Guests are dealt with in the guests app. 
 
     {
         
@@ -34,27 +34,7 @@ Sample Payload:
         
         "time": "2018-05-12T21:42:22.890158Z",
         
-        "location": "Canyon Point",
-        
-        "guests": [
-            "UCLA:105032378"
-        ],
-        
-        "guestsNameCache": [
-            "Siddharth"
-        ],
-        
-        "entryTime": [
-            "2018-05-12T21:42:22.890158Z"
-        ],
-        
-        "exitTime": [
-            "2018-05-12T21:52:22.890158Z"
-        ],
-        
-        "paymentMethod": [
-            "Cash"
-        ]
+        "location": "Canyon Point"
     
     }
 
@@ -91,7 +71,7 @@ Sample Payload: Updates Party ID to UCLA:105032378-2 and changes the time
         
         "location": "Canyon Point",
         
-        }
+    }
     
 #### Delete a certain party
 DELETE: https://thirsty-thursday.herokuapp.com/party/search/[UniquePartyID]/
@@ -115,47 +95,62 @@ Also allows the user to view the guest instances for a single party (as well as 
 GET: https://test-thursday.herokuapp.com/guest/all/
 
 #### Check in new guest
-POST: https://test-thursday.herokuapp.com/guest/checkin/ HTTP/1.1
+POST: https://test-thursday.herokuapp.com/guest/checkin/ 
 
 Sample Payload: Checks in new Guest (UCLA:000000001) to party (UCLA:105032378-1) with fields for basic information, entry time and payment method filled correctly. Exit time is populated by null value i.e. EPOCH Time (1970-01-01T00:00:00Z)
 
-{
+    {
 
-    "guestInstanceID": "UCLA:105032378-1UCLA:000000001",
+        "guestInstanceID": "UCLA:105032378-1UCLA:000000001",
 
-    "partyID": "UCLA:105032378-1",
+        "partyID": "UCLA:105032378-1",
 
-    "userID": "UCLA:000000001",
+        "userID": "UCLA:000000001",
 
-    "firstName": "Joesephine",
+        "firstName": "Joesephine",
 
-    "lastName": "Bruin",
+        "lastName": "Bruin",
 
-    "college": "UCLA",
+        "college": "UCLA",
 
-    "entryTime": "2018-07-06T23:00:00Z",
+        "entryTime": "2018-07-06T23:00:00Z",
 
-    "exitTime": "1970-01-01T00:00:00Z",
+        "exitTime": "1970-01-01T00:00:00Z",
 
-    "paymentMethod": "Venmo"
+        "paymentMethod": "Venmo"
 
-}
+    }
 
 #### Check out guest
-PATCH:  https://test-thursday.herokuapp.com/guest/search/UCLA:105032378-1UCLA:000000001/ HTTP/1.1
+PATCH:  https://test-thursday.herokuapp.com/guest/search/UCLA:105032378-1UCLA:000000001/ 
 
 Sample Payload: Sets the exit time for guest UCLA:000000001 at party UCLA:105032378-1 to 12 A.M. on 07/07/18
 
-{
+    {
 
-    "exitTime": "2018-07-07T00:00:00Z"
+        "exitTime": "2018-07-07T00:00:00Z"
 
-}
+    }   
 
 #### Filter by Party
-GET: https://test-thursday.herokuapp.com/guest/party/UCLA:105032378-1/ HTTP/1.1
+GET: https://test-thursday.herokuapp.com/guest/party/UCLA:105032378-1/ 
 
 ## User API Calls
+
+### What it does
+
+### Usage
+
+#### Create New User
+
+Coming soon...
+
+#### Make User Operator
+
+Coming soon...
+
+#### Make User Organizer
+
 Coming soon...
 
 ## Naming Conventions
