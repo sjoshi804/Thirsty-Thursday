@@ -40,6 +40,6 @@ class GuestList(generics.ListAPIView):
         partyID = self.kwargs['pk']
 
         if partyID is not None:
-            queryset = queryset.filter(partyid__icontains = partyID)
+            queryset = queryset.filter(partyID__icontains = partyID)
 
         return queryset
