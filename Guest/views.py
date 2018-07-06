@@ -18,7 +18,7 @@ class GuestCheckIn(generics.CreateAPIView):
 #Individual Guest Instance - used for updating payment, and exit time etc. 
 class GuestDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = GuestSerializer
-    lookup_field = 'guestinstanceid'
+    lookup_field = 'guestInstanceID'
     def get_queryset(self):
         queryset = Guest.objects.all()
 
