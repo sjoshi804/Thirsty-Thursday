@@ -13,5 +13,5 @@ urlpatterns = [
     re_path(r'search/(?P<pk>.+)/$', views.GuestDetail.as_view(), name='guest-detail'),
     re_path(r'filter/college/(?P<pk>.+)/$', views.GuestList.as_view(), name='guest-college-details'),
     re_path(r'filter/organized-by/(?P<pk>.+)/$', views.GuestList.as_view(), name='guest-organizer-details'),
-    re_path(r'checkin/(?P<pk>.+)/$', views.GuestCheckIn.as_view(), name = 'guest-check-in')
+    re_path(r'checkin/$', views.GuestCheckIn.as_view(), name = 'guest-check-in')
 ]

@@ -1,0 +1,21 @@
+###
+//Get all guest instances
+GET https://test-thursday.herokuapp.com/guest/all/
+
+###
+//Check in new guest
+POST https://test-thursday.herokuapp.com/guest/checkin/ HTTP/1.1
+content-type: application/json
+
+{
+    "guestInstanceID": "UCLA:105032378-1UCLA:000000000",
+    "partyID": "UCLA:105032378-1",
+    "userID": "UCLA:000000000",
+    "firstName": "Joe",
+    "lastName": "Bruin",
+    "college": "UCLA",
+    "entryTime": "2018-07-06T23:00:00Z",
+    "exitTime": "2018-07-07T02:00:00Z",
+    "paymentMethod": "Venmo"
+  }
+
