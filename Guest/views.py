@@ -43,3 +43,17 @@ class GuestList(generics.ListAPIView):
             queryset = queryset.filter(partyID__icontains = partyID)
 
         return queryset
+
+class GuestAttended(generics.ListAPIView):
+    serializer_class = GuestSerializer
+    lookup_field = 'pk'
+    
+    def get_queryset(self):
+        queryset = Guest.objects.all()
+
+        userID = self.kwargs['pk']
+
+        if userID is not None:
+            queryset = queryset.filter(userID = userID)
+
+        return queryset
