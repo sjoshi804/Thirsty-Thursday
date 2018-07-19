@@ -4,4 +4,4 @@ from Guest.models import Guest
 class GuestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Guest
-        fields = ('guestInstanceID', 'partyID', 'userID', 'firstName', 'lastName', 'college', 'entryTime', 'exitTime', 'paymentMethod')
+        fields = ('guestInstanceID', 'status', 'partyID', 'userID', 'firstName', 'lastName', 'college', 'entryTime', 'exitTime', 'paymentMethod')

@@ -1,12 +1,11 @@
 # Party Creation
-POST https://thirsty-thursday.herokuapp.com/party/all/ HTTP/1.1
+POST https://test-thursday.herokuapp.com/party/all/ HTTP/1.1
 Content-Type: application/json
 
 {
-    
-    "partyid": "UCLA:105032378-1", //Refer to party naming convention
+    "partyid": "UCLA:105032378-4", 
 
-    "eventName": "Post Test",
+    "eventName": "API Test",
 
     "hostedBy": "UCLA:105032378",
 
@@ -16,28 +15,7 @@ Content-Type: application/json
     
     "time": "2018-05-12T21:42:22.890158Z",
     
-    "location": "Canyon Point",
-    
-    "guests": [
-        "UCLA:105032378"
-    ],
-    
-    "guestsNameCache": [
-        "Siddharth"
-    ],
-    
-    "entryTime": [
-        "2018-05-12T21:42:22.890158Z"
-    ],
-    
-    "exitTime": [
-        "2018-05-12T21:52:22.890158Z"
-    ],
-    
-    "paymentMethod": [
-        "Cash"
-    ]
-
+    "location": "Canyon Point"
 }
 
 ###
